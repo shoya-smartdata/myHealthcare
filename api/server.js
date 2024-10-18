@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import { syncModels } from './Models/index.js'; 
 import sequelize from './config/db.js'; 
 import userRoute from "./Routes/userRoute.js"; 
+import doctorRoute from "./Routes/doctorRoute.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use('/api', userRoute);
+app.use('/api', doctorRoute);
 
 app.listen(PORT, async () => {
   console.log(`Your server is running successfully on port ${PORT}`);
